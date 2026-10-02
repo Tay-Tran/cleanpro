@@ -51,6 +51,13 @@ Open http://localhost:3000. Without any configuration the site runs on sample co
 3. In Sanity Manage → **API → CORS origins**, add `http://localhost:3000`
    (and your production URL later), with **Allow credentials** checked.
 4. Restart `npm run dev` and open http://localhost:3000/studio to start editing.
+5. Optional: load the demo content into the empty dataset:
+
+   ```bash
+   npx sanity login
+   npx tsx scripts/build-seed.ts   # regenerates scripts/seed.ndjson
+   npx sanity dataset import scripts/seed.ndjson --dataset production
+   ```
 
 ## Deploy to Vercel
 
